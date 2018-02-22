@@ -35,6 +35,7 @@
 #include <map>
 #include <algorithm>
 #include <unistd.h>
+#include <sys/types.h>
 
 #include "assert.h"
 #include "cdb2api.h"
