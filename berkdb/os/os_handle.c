@@ -48,8 +48,10 @@ oflags(int flags, char *o_flags)
 #ifdef _LINUX_SOURCE
 	if (flags & O_NDELAY)
 		strcat(o_flags, "O_NDELAY ");
+#ifdef O_FSYNC
 	if (flags & O_FSYNC)
 		strcat(o_flags, "O_FSYNC ");
+#endif
 	if (flags & O_ASYNC)
 		strcat(o_flags, "O_ASYNC ");
 	if (flags & O_DIRECTORY)
