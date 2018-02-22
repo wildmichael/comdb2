@@ -52,7 +52,9 @@
 #include <arpa/inet.h>
 #include <sys/socket.h>
 #ifdef _AIX
+#ifdef HAVE_SYS_SOCKETVAR_H
 #include <sys/socketvar.h>
+#endif 
 #endif
 #include <netinet/in.h>
 #include <netinet/tcp.h>

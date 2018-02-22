@@ -104,6 +104,12 @@ elseif(${CMAKE_SYSTEM_NAME} STREQUAL SunOS)
   set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -lsocket -lnsl -lresolv -lpthread")
 endif()
 
+include(CheckIncludeFile)
+check_include_file("sys/socketvar.h" HAVE_SYS_SOCKETVAR_H)
+if (HAVE_SYS_SOCKETVAR_H)
+  add_definitions(-DHAVE_SYS_SOCKETVAR_H)
+endif()
+
 add_subdirectory(bb)
 add_subdirectory(bdb)
 add_subdirectory(berkdb)

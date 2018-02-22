@@ -22,7 +22,9 @@
 #include <sys/types.h>
 #include <sys/resource.h>
 #include <sys/socket.h>
+#ifdef HAVE_SYS_SOCKETVAR_H
 #include <sys/socketvar.h>
+#endif
 #include <sys/stat.h>
 #include <sys/un.h>
 #include <fcntl.h>

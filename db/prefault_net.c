@@ -30,7 +30,9 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <sys/socket.h>
+#ifdef HAVE_SYS_SOCKETVAR_H
 #include <sys/socketvar.h>
+#endif 
 #include <sys/uio.h>
 #include <unistd.h>
 

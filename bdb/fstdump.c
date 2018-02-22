@@ -25,7 +25,9 @@
 #include <pthread.h>
 #include <sys/uio.h>
 #include <sys/socket.h>
+#ifdef HAVE_SYS_SOCKETVAR_H
 #include <sys/socketvar.h>
+#endif 
 
 #include <stdio.h>
 #include <stdlib.h>

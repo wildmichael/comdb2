@@ -29,7 +29,9 @@
 
 #include <sys/param.h>
 #include <sys/socket.h>
+#ifdef HAVE_SYS_SOCKETVAR_H
 #include <sys/socketvar.h>
+#endif
 #include <sys/types.h>
 #include <sys/un.h>
 #include <arpa/inet.h>
