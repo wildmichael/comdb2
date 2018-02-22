@@ -23,7 +23,13 @@
 #include "comdb2rle.h"
 
 #ifndef BYTE_ORDER
-#   error "BYTE_ORDER not defined"
+#   ifdef __BYTE_ORDER__
+#      define BYTE_ORDER __BYTE_ORDER__
+#      define LITTLE_ENDIAN __ORDER_LITTLE_ENDIAN__
+#      define BIG_ENDIAN __ORDER_BIG_ENDIAN__
+#   else
+#      error "BYTE_ORDER not defined"
+#   endif
 #endif
 
 static void print_hex(uint8_t *b, unsigned l)
