@@ -59,8 +59,10 @@ const struct signal_name unix_signals[] = {
     defsig(GRANT),  defsig(RETRACT), defsig(SOUND),    defsig(SAK),
 #endif /*_IBM_SOURCE*/
 #if defined(_SUN_SOURCE) || defined(_LINUX_SOURCE)
-#   if !defined(__APPLE__)
+#   if !defined(__APPLE__) && defined(SIGCLD)
     defsig(CLD),
+#   elif defined(SIGCHLD)
+    defsig(CHLD),
 #   endif
 #endif /* _SUN_SOURCE || _LINUX_SOURCE */
 #ifdef _SUN_SOURCE
